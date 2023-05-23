@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Big Shoulders Display', cursive;
+    font-family: 'Lexend Deca', sans-serif;
+}
+:root {
+    --guide-border: 1px solid black;
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --extra-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.8);
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 95%);
+}
+/* Base styles end here */
+
+
+
+/* Main card section */
+.cards {
+    display: grid;
+    grid-template-columns: minmax(200px,270px);
+    grid-template-rows: 1fr;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-interior-layout {
+    padding: 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--transparent-white);
+}
+.car-type {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    font-family: 'Big Shoulders Display', cursive;
+}
+.car-description {
+    padding-bottom: 2rem;
+    line-height: 1.5;
+    font-size: 1.3rem;
+}
+.learn-more-btn {
+    padding: 1rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    max-width: 120px;
+}
+
+
+/* Sedan car section */
+.sedan--section {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: var(--bright-orange);
+}
+.sedan-btn {
+    color: var(--bright-orange);
+}
+.sedan-btn:hover {
+    border: 2px solid var(--transparent-white);
+    color: var(--transparent-white);
+    background-color: var(--bright-orange);
+}
+
+/* SUVs section */
+.suv--section {
+    background-color: var(--dark-cyan);
+}
+.suv-btn {
+    color: var(--dark-cyan);
+}
+.suv-btn:hover {
+    border: 2px solid var(--transparent-white);
+    color: var(--transparent-white);
+    background-color: var(--dark-cyan);
+}
+
+/* Luxury section */
+.luxury--section {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--extra-dark-cyan);
+}
+.luxury-btn {
+    color: var(--extra-dark-cyan);
+}
+.luxury-btn:hover {
+    border: 2px solid var(--transparent-white);
+    color: var(--transparent-white);
+    background-color: var(--extra-dark-cyan);
+}
+
+/* Desktop responsivness */
+@media screen and (min-width: 720px){
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        grid-template-rows: 1fr;
+    }
+    .card-interior-layout {
+        padding: 2.5rem 1.5rem 2.5rem 3rem;
+    }
+    .sedan--section {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+    .luxury--section {
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+    .learn-more-btn {
+        margin-top: 4rem;
+        margin-bottom: 1.5rem;
+    }
+    .car-description {
+        font-size: 1.2rem;
+    }
+    .learn-more-btn {
+        font-size: 1.2rem;
+    }
+}
